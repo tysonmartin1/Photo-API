@@ -1,0 +1,38 @@
+html{
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,cantarell,helvetica neue,ubuntu,sans-serif;
+    background-color: white;
+    height: 100rem;
+    
+}
+
+/* Header */
+
+#header{
+    height: 4.125rem;
+    padding: 0rem 1.006rem;
+    background-color: blanchedalmond;
+}
+
+#header-content{
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-nav-selector{
+    display: flex;
+    flex-direction: row;
+}
+
+.header-nav-selector:nth-of-type(3) svg{
+    height: 1.563rem;
+    width: 1.563rem;
+}
+
+#profile-selector{
+    display: inline;
+    width: 3.375rem;
+    height: 1.563rem;
+}
