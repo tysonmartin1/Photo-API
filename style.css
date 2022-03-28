@@ -1,17 +1,18 @@
-html{
+html, body{
     margin: 0;
+    padding: 0;
     font-family: -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,cantarell,helvetica neue,ubuntu,sans-serif;
-    background-color: white;
-    height: 100rem;
-    
+    height: 100%;
+    width: 100%;
 }
 
 /* Header */
 
 #header{
     height: 4.125rem;
+    width: 87rem;
     padding: 0rem 1.006rem;
-    background-color: blanchedalmond;
+    position: fixed;
 }
 
 #header-content{
@@ -19,11 +20,30 @@ html{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+
+#website-icon{
+    width: 1.188rem;
+    font-weight: 600;
+    color: white ;
+    width: fit-content;
+}
+
+#header-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-left: 2rem;
+    
 }
 
 .header-nav-selector{
-    display: flex;
-    flex-direction: row;
+    color: white;
+    text-align: left;
+    font-size: 1.063rem;
+    margin-left: 1.7rem;
 }
 
 .header-nav-selector:nth-of-type(3) svg{
@@ -32,7 +52,97 @@ html{
 }
 
 #profile-selector{
-    display: inline;
     width: 3.375rem;
     height: 1.563rem;
 }
+
+.header-nav-selector:nth-of-type(4){
+    display: flex;
+    flex-direction: row;
+    width: 3.375rem;
+}
+#avatar-img img{
+    height: 1.2rem;
+    width: 1.2rem;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+#drop-down-selector svg{
+    color: white;
+    fill: currentColor;
+    margin-left: .2rem;
+}
+
+.header-nav-selector button{
+    width: 6.7rem;
+    height: 2.462rem;
+    background-color: #00A081;
+    border: none;
+    color: white;
+    font-size: 1.063rem;
+    margin-left: .3rem !important;
+    font-weight: 600;
+    border-radius: 0.25rem;
+}
+
+/* Home Photo */
+
+#home-photo{
+    height: 31.25rem;
+    padding-top: 8.2rem;
+    background-image: url(https://images.pexels.com/photos/4334250/pexels-photo-4334250.jpeg?auto=compress&crop=focalpoint&cs=tinysrgb&fit=crop&fp-y=0.6&h=500&sharp=20&w=3000);
+    background-position: center;  
+    object-fit: cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat; 
+}
+ #home-photo-content{
+     height: 12.706rem;
+     padding-left: 21rem;
+     padding-right: 21rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     
+ }
+
+ #home-title{
+     color: white;
+     font-size: 2.25rem;
+     font-weight: bold;
+ }
+
+ #home-search{
+     display: flex;
+     flex-direction: row;
+    width: 100%;
+    position: relative;
+     
+ }
+
+ #home-search input{
+     width: 37.313rem;
+     height: 3.563rem;
+     padding-top: 1.25rem;
+     padding-bottom: 1.25rem;
+     border-radius: 4px;
+     border: none;
+     padding: 0.9rem 1.25rem;
+     font-size: 1.063rem;
+     font-family: inherit;
+     outline: none;
+ }
+
+ #home-search button{
+     background-color: white;
+     height: 3.563rem;
+     width: 3.313rem;
+     border: none;
+     border-radius: 3px;
+     position: absolute;
+     right: 9rem;
+     color: #5E5E5E;
+     fill: currentColor;
+ }

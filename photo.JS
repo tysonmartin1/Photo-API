@@ -11,7 +11,7 @@ headerContent.innerHTML =`
      </path>
     <path d="M13 21h3.863v-3.752h1.167a3.124 3.124 0 1 0 0-6.248H13v10zm5.863 2H11V9h7.03a5.124 5.124 0 0 1 .833 10.18V23z" fill="#fff">
         </path>
-    <h3>Pexels</h3
+    <h3>Pexels</h3>
 </div>
 
 <div id= "header-nav">
@@ -39,7 +39,9 @@ headerContent.innerHTML =`
         </div>
     </div>
     <div class= "header-nav-selector">
-        <button>Upload</button>
+        <button>
+            Upload
+        </button>
     </div>
 </div>
 
@@ -47,7 +49,29 @@ headerContent.innerHTML =`
 
 header.appendChild(headerContent)
 
-console.log(header)
+// Home Cover Photo //
+
+const homePhoto = document.getElementById('home-photo');
+
+const homePhotoContent = document.createElement('div');
+
+homePhotoContent.setAttribute('id','home-photo-content');
+
+homePhotoContent.innerHTML =`
+<div id= "home-title">
+<p>The best free stock photos, royalty free images & videos shared by creators.</p>
+</div>
+
+<div id= "home-search">
+    <input type= "search" placeholder= "Search for free photos and videos">
+    <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></button>
+</div>
+<div id= "suggested-tags">
+   <p> Suggested: vacation,  travel,  passport,  people, happy,  travelling  more </p>
+</div>
+`;
+
+homePhoto.appendChild(homePhotoContent)
 
 
 var xhttp = new XMLHttpRequest();
