@@ -99,8 +99,8 @@ html, body{
 }
  #home-photo-content{
      height: 12.706rem;
-     padding-left: 21rem;
-     padding-right: 21rem;
+     padding-left: 28rem;
+     padding-right: 17rem;
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -112,6 +112,7 @@ html, body{
      color: white;
      font-size: 2.25rem;
      font-weight: bold;
+     margin-bottom: -1rem;
  }
 
  #home-search{
@@ -123,7 +124,7 @@ html, body{
  }
 
  #home-search input{
-     width: 37.313rem;
+     width: 38.313rem;
      height: 3.563rem;
      padding-top: 1.25rem;
      padding-bottom: 1.25rem;
@@ -142,7 +143,47 @@ html, body{
      border: none;
      border-radius: 3px;
      position: absolute;
-     right: 9rem;
+     right: 7rem;
      color: #5E5E5E;
      fill: currentColor;
+ }
+
+ #suggested-tags{
+     color: white;
+     padding-right: 12rem;
+     font-weight: bold;
+ }
+
+ #suggested-tags span{
+     font-weight: normal;
+ }
+
+ /* Nav Bar */
+ #nav-bar{
+     height: 3.813rem;
+     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+ }
+ #nav-bar-content{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .nav-bar-selector{
+     color: #5E5E5E;
+     font-size: 1.063rem;
+     padding: 1.063rem;
+     height: 100%;
+     font-weight: 600;
+ }
+
+ .nav-bar-selector:hover{
+     cursor: pointer;
+     color: #0063F9;
+ }
+
+ .nav-bar-selector:nth-of-type(1){
+     color: #0063F9;
+     border-bottom: 3px solid #0063F9;
  }
