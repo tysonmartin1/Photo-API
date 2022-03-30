@@ -1,4 +1,4 @@
-html, body{
+html body{
     margin: 0;
     padding: 0;
     font-family: -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,cantarell,helvetica neue,ubuntu,sans-serif;
@@ -12,15 +12,22 @@ html, body{
     height: 4.125rem;
     width: 87rem;
     padding: 0rem 1.006rem;
+    margin: auto;
     position: fixed;
 }
 
 #header-content{
-    height: inherit;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 66px;
+    display: -webkit-box;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-align: center;
     align-items: center;
+    padding: 0 1.15rem;
+    z-index: 30;
 }
 
 #website-icon{
@@ -40,9 +47,15 @@ margin-left: .8rem;
 #header-nav{
     display: flex;
     flex-direction: row;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
     align-items: center;
-    justify-content: start;
-    margin-left: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: .8rem;
     
 }
 
@@ -103,6 +116,7 @@ margin-left: .8rem;
 
 #home-photo{
     height: 31.25rem;
+    width: 100%;
     padding-top: 8.2rem;
     background-image: url(https://images.pexels.com/photos/4334250/pexels-photo-4334250.jpeg?auto=compress&crop=focalpoint&cs=tinysrgb&fit=crop&fp-y=0.6&h=500&sharp=20&w=3000);
     background-position: center;  
@@ -111,13 +125,13 @@ margin-left: .8rem;
     background-repeat: no-repeat; 
 }
  #home-photo-content{
-     height: 12.706rem;
-     padding-left: 26rem;
-     padding-right: 19rem;
+     height: 12.738rem;
+     width: 40.625rem;
      display: flex;
      flex-direction: column;
+     justify-content: start;
      align-items: center;
-     justify-content: center;
+     margin: auto;
      
  }
 
@@ -137,10 +151,8 @@ margin-left: .8rem;
  }
 
  #home-search input{
-     width: 38.313rem;
+     width: 40rem;
      height: 3.563rem;
-     padding-top: 1.25rem;
-     padding-bottom: 1.25rem;
      border-radius: 4px;
      border: none;
      padding: 0.9rem 1.25rem;
@@ -156,15 +168,20 @@ margin-left: .8rem;
      border: none;
      border-radius: 3px;
      position: absolute;
-     right: 7rem;
+     right: 1rem;
      color: #5E5E5E;
      fill: currentColor;
  }
 
+ #home-search button:hover{
+      cursor: pointer;
+ }
+
  #suggested-tags{
      color: white;
-     padding-right: 12rem;
-     font-weight: bold;
+     padding-right: 9rem;
+     font-size: 0.875rem;
+     width: 32rem;
  }
 
  #suggested-tags span{
@@ -187,8 +204,8 @@ margin-left: .8rem;
  .nav-bar-selector{
      color: #5E5E5E;
      font-size: 1.063rem;
-     padding: 1.063rem;
-     height: 1.6rem;
+     padding: 1.094rem;
+     height: 1.3rem;
      font-weight: 600;
  }
 
@@ -201,4 +218,43 @@ margin-left: .8rem;
      color: #0063F9;
      border-bottom: 3px solid #0063F9;
      border-radius: 3px;
+     padding-top: 1.3rem;
+ }
+
+ /* Filter Bar */
+
+ #filter-bar{
+     height: 3rem;
+     
+     background-color: yellow;
+ }
+
+ #filter-bar-content{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+     margin: 0rem 2rem;
+     background-color: lime;
+ }
+
+ #photo-title{
+     font-size: 1.125rem;
+     font-weight: 600;
+ }
+
+ #drop-down-menu select{
+     font-weight: 600;
+     font-size: 0.875rem;
+     border: none;
+     outline: none;
+ }
+
+ /* Photo Results */
+
+ #photo-container{
+     height: 3rem;
+     margin: 0rem 2rem;
+     background-color: red;
+
  }

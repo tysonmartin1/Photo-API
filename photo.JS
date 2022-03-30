@@ -60,7 +60,7 @@ homePhotoContent.innerHTML =`
 </div>
 
 <div id= "home-search">
-    <input type= "search" placeholder= "Search for free photos and videos">
+    <input type= "search" id= "search" placeholder= "Search for free photos and videos">
     <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></button>
 </div>
 <div id= "suggested-tags">
@@ -97,13 +97,50 @@ navBarContent.innerHTML=`
 
 navBar.appendChild(navBarContent);
 
+// Filter Bar //
+const filterBar = document.getElementById('filter-bar');
+const filterBarContent = document.createElement('div');
 
+filterBarContent.setAttribute('id', 'filter-bar-content');
+
+filterBarContent.innerHTML=`
+<div id= "photo-title">
+<p>Free Stock Photos</p>
+</div>
+
+<div id= "drop-down-menu">
+    <select id ="photo-filter" name= "filter-list">
+    <option value= "trending">Trending</option>
+    <option value= "new">New</option>
+    <option value= "following">Following</option>
+</div>
+`;
+
+filterBar.appendChild(filterBarContent);
+// Photo Results Container //
+const search = document.getElementById('search');
+search.addEventListener('')
+
+
+const photoContainer = document.getElementById('photo-container');
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        // Typical action to be performed when the document is ready:
+       let content = JSON.parse(xhttp.responseText);
+       let searchArray =  content.photos;
        
-       console.log(xhttp)
+       
+       for(let i = 0; i < searchArray.length; i++) {
+        
+        const photoDiv = document.createElement('img');
+        photoDiv.src = searchArray.src.medium
+        photoDiv.classList.add("photo-results");
+
+        return photoContainer.appendChild(photoDiv)
+        
+       };
+       
     }
 };
 xhttp.open("GET", "https://api.pexels.com/v1/search?query=people", true);
