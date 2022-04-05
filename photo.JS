@@ -119,7 +119,7 @@ filterBarContent.innerHTML=`
 filterBar.appendChild(filterBarContent);
 // Photo Results Container //
 const search = document.getElementById('search');
-search.addEventListener('')
+search.addEventListener('click', )
 
 
 const photoContainer = document.getElementById('photo-container');

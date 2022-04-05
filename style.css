@@ -225,8 +225,6 @@ margin-left: .8rem;
 
  #filter-bar{
      height: 3rem;
-     
-     background-color: yellow;
  }
 
  #filter-bar-content{
@@ -235,7 +233,7 @@ margin-left: .8rem;
      align-items: center;
      justify-content: space-between;
      margin: 0rem 2rem;
-     background-color: lime;
+     
  }
 
  #photo-title{
@@ -253,8 +251,21 @@ margin-left: .8rem;
  /* Photo Results */
 
  #photo-container{
-     height: 3rem;
+     height: fit-content;
      margin: 0rem 2rem;
-     background-color: red;
+     display: flex;
+     display: -webkit-box;
+ }
 
+
+ .image-results{
+     width: 22.758rem;
+     background-color: pink;
+     height: 14rem;
+     display: block;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-right: 1.45rem;
  }
