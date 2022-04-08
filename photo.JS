@@ -119,7 +119,10 @@ filterBarContent.innerHTML=`
 filterBar.appendChild(filterBarContent);
 // Photo Results Container //
 const search = document.getElementById('search');
-search.addEventListener('click', )
+
+search.addEventListener('search',()=>{
+    console.log(search.value)
+})
 
 
 const photoContainer = document.getElementById('photo-container');
@@ -130,14 +133,14 @@ xhttp.onreadystatechange = function() {
        let content = JSON.parse(xhttp.responseText);
        let searchArray =  content.photos;
        
-       
+       console.log(searchArray)
        for(let i = 0; i < searchArray.length; i++) {
         
-        const photoDiv = document.createElement('img');
-        photoDiv.src = searchArray.src.medium
-        photoDiv.classList.add("photo-results");
+        //const photoDiv = document.createElement('img');
+       // photoDiv.src = searchArray.src.medium
+        //photoDiv.classList.add("photo-results");
 
-        return photoContainer.appendChild(photoDiv)
+       // return photoContainer.appendChild(photoDiv)
         
        };
        

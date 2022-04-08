@@ -254,18 +254,16 @@ margin-left: .8rem;
      height: fit-content;
      margin: 0rem 2rem;
      display: flex;
-     display: -webkit-box;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     vertical-align: center;
+     height: auto;
  }
 
 
  .image-results{
-     width: 22.758rem;
+     width: 27.5rem;
      background-color: pink;
      height: 14rem;
-     display: block;
-    flex-basis: 0;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    flex-shrink: 1;
-    margin-right: 1.45rem;
+     margin-top: 2rem;
  }
