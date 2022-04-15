@@ -118,42 +118,37 @@ filterBarContent.innerHTML=`
 
 filterBar.appendChild(filterBarContent);
 // Photo Results Container //
-const search = document.getElementById('search');
+function log(a) {
+    console.log(a);
+}
 
-search.addEventListener('search',(e)=>{
+const search = document.getElementById('search')
+const photoContainer = document.getElementById('photo-container');
+
+
+search.addEventListener('keyup', (e) => {
     if(!search.value) return;
     let searchValue = search.value.toUpperCase()
-    console.log(searchValue)
+    log(searchValue)
     if (e.code === "Enter") { 
-        const photoContainer = document.getElementById('photo-container');
-        var xhttp = new XMLHttpRequest();
+        let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-               // Typical action to be performed when the document is ready:
-               let content = JSON.parse(xhttp.responseText);
-               let searchArray =  content.photos;
-               console.log(searchArray)
-               
-               console.log(searchArray)
-               for(let i = 0; i < searchArray.length; i++) {
                 
-                const photoDiv = document.createElement('img');
-                photoDiv.src = searchArray.src.medium
-                photoDiv.classList.add("photo-results");
-
-        
-               return photoContainer.appendChild(photoDiv)
-                
-               };
-               
+                let content = JSON.parse(xhttp.responseText);
+                let imageArray = content.photos
+                log(content)
+                for(let i = 0; i < imageArray.length; i++) {
+                    let newImage = document.createElement('img')
+                    newImage.src = imageArray[i].src.medium
+                    newImage.classList.add('image-results')
+                    newImage.id = i
+                    photoContainer.appendChild(newImage) 
+                }
             }
-        }
-    } 
-    
-});
-
-
-
-xhttp.open("GET", `https://api.pexels.com/v1/search?query=${search.value}`, true);
-xhttp.setRequestHeader('Authorization','563492ad6f9170000100000117fbdd87182b491c8bf0b2a95c269509')
-xhttp.send();
+        };
+        xhttp.open("GET", `https://api.pexels.com/v1/search?query=${search.value}`, true);
+        xhttp.setRequestHeader('Authorization', '563492ad6f9170000100000117fbdd87182b491c8bf0b2a95c269509')
+        xhttp.send();
+    }
+})
